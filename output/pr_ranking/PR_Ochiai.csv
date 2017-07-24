@@ -1,0 +1,13 @@
+org.apache.commons.lang3.math.NumberUtils:createNumber(Ljava/lang/String;)Ljava/lang/Number;,0.127168425438
+org.apache.commons.lang3.math.NumberUtils:isAllZeros(Ljava/lang/String;)Z,0.116661528156
+org.apache.commons.lang3.math.NumberUtils:createBigInteger(Ljava/lang/String;)Ljava/math/BigInteger;,0.112837017523
+org.apache.commons.lang3.math.NumberUtils:createInteger(Ljava/lang/String;)Ljava/lang/Integer;,0.112837017523
+org.apache.commons.lang3.math.NumberUtils:createDouble(Ljava/lang/String;)Ljava/lang/Double;,0.112837017523
+org.apache.commons.lang3.math.NumberUtils:createFloat(Ljava/lang/String;)Ljava/lang/Float;,0.112837017523
+org.apache.commons.lang3.math.NumberUtils:createBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal;,0.108518655636
+org.apache.commons.lang3.math.NumberUtils:isDigits(Ljava/lang/String;)Z,0.102627524275
+org.apache.commons.lang3.math.NumberUtils:createLong(Ljava/lang/String;)Ljava/lang/Long;,0.09475246687
+org.apache.commons.lang3.SystemUtils:isJavaVersionAtLeast(Lorg/apache/commons/lang3/JavaVersion;)Z,0.0483041143551
+org.apache.commons.lang3.JavaVersion:atLeast(Lorg/apache/commons/lang3/JavaVersion;)Z,0.0473420984372
+org.apache.commons.lang3.StringUtils:isBlank(Ljava/lang/CharSequence;)Z,0.0293005718355
+org.apache.commons.lang3.StringUtils:isEmpty(Ljava/lang/CharSequence;)Z,0.0193088440409
