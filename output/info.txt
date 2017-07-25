@@ -1,4 +1,4 @@
 XML files with failing tests:
 	SUBJECT_DIR=D:\PRFL\example
-	$SUBJECT_DIR\target\surefire-reports\TEST-org.apache.commons.lang3.math.NumberUtilsTest.xml
+	$SUBJECT_DIR$\target\surefire-reports\TEST-org.apache.commons.lang3.math.NumberUtilsTest.xml
 

@@ -15,14 +15,14 @@ def computeSuspScores(inputMatrix):
     if max_EF == 0.0:
         pr_EF = 0.0 * inputMatrix[:, 0]
     else:
-        pr_EF = inputMatrix[:, 0] / max_EF * inputMatrix[:, 4]
+        pr_EF = inputMatrix[:, 0] * inputMatrix[:, 4] # inputMatrix[:, 0] is already normalized! (/ max_EF removed)
 
     max_EP = np.amax(inputMatrix[:, 1])
     # prevent "0 divides 0"
     if max_EP == 0.0:
         pr_EP = 0.0 * inputMatrix[:, 1]
     else:
-        pr_EP = inputMatrix[:, 1] / max_EP * inputMatrix[:, 5]
+        pr_EP = inputMatrix[:, 1] * inputMatrix[:, 5] # inputMatrix[:, 1] is already normalized! (/ max_EP removed)
 
     pr_NF = inputMatrix[:, 4] - pr_EF
     pr_NP = inputMatrix[:, 5] - pr_EP

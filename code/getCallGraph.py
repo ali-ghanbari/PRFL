@@ -1,3 +1,5 @@
+""""runs call graph analysis and directs stdout to call_graph.txt"""
+
 import os
 import sys
 

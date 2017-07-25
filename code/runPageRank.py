@@ -80,8 +80,10 @@ class PageRanker:
         failingMethodSet = set()
         passingMethodSet = set()
 
+        # assumes that all methods covered by failing tests are failing methods
         for test_i in failingTestSet:
             failingMethodSet = failingMethodSet.union(self.testMethodDict[test_i])
+        # assumes that all methods covered by passing tests are passing methods
         for test_j in passingTestSet:
             passingMethodSet = passingMethodSet.union(self.testMethodDict[test_j])
 
@@ -113,8 +115,8 @@ class PageRanker:
         methodNum = len(methodList)
         testList = list(testSet)
         testNum = len(testList)
-        prime_M2Mmatrix = np.zeros((methodNum, methodNum))
-        prime_M2Mmatrix_return = np.zeros((methodNum, methodNum))
+        prime_M2Mmatrix = np.zeros((methodNum, methodNum)) # call
+        prime_M2Mmatrix_return = np.zeros((methodNum, methodNum)) # return
 
         # methodList is failingMethodSet
         for method_i in methodList:
@@ -125,6 +127,7 @@ class PageRanker:
                 prime_M2Mmatrix[caller_index, callee_index_list] = 1.0
                 prime_M2Mmatrix_return[callee_index_list, caller_index] = 1.0
 
+        # assumes that all methods are mutually recursive!
         M2Mmatrix = prime_M2Mmatrix + prime_M2Mmatrix_return * self.delta
 
         # construct M2Tmatrix
@@ -137,7 +140,7 @@ class PageRanker:
         cnnxMtrxDict = dict()
         cnnxMtrxDict["methodList"] = methodList
         cnnxMtrxDict["testList"] = testList
-        cnnxMtrxDict["M2Mmatrix"] = M2Mmatrix
+        cnnxMtrxDict["M2Mmatrix"] = M2Mmatrix # column-normalized?
         cnnxMtrxDict["M2Tmatrix"] = M2Tmatrix
         cnnxMtrxDict["T2Mmatrix"] = T2Mmatrix
         return cnnxMtrxDict
